@@ -7,7 +7,7 @@ import benefitsImg from '../../assets/images/benefits.jpg';
 
 function Benefits() {
   return (
-    <div className="container pb-5">
+    <div className="container mt-10 pb-5">
       <div className=" block text-center lg:flex lg:items-center lg:justify-center lg:gap-16 lg:text-start">
         <div className="">
           <img className="mx-auto mb-6 h-[500px] w-[400px] rounded-lg" src={benefitsImg} alt="/" />
