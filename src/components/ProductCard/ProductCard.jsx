@@ -1,7 +1,15 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+
+import {setItemInCart} from '../../redux/slices/cartSlice/cartSlice';
 
 function ProductCard(props) {
-  const {title, price, imagePath} = props.item;
+  const {title, price, imagePath, id} = props.item;
+  const dispatch = useDispatch();
+  const handleClick = e => {
+    e.stopPropagation();
+    dispatch(setItemInCart({title, imagePath, price, id}));
+  };
   return (
     <div>
       <div className="flex h-[390px] w-[270px] flex-col  rounded-xl bg-[#e8e8e8] p-3">
@@ -15,7 +23,10 @@ function ProductCard(props) {
         <h5 className=" mt-2 text-center text-sm font-semibold">{title}</h5>
         <div className=" mt-auto flex items-center justify-between">
           <span className="text-xl">{price}$</span>
-          <button className="rounded-xl bg-green-900 py-2 px-3 font-semibold text-white">
+          <button
+            onClick={handleClick}
+            className="rounded-xl bg-green-900 py-2 px-3 font-semibold text-white"
+          >
             Add to Cart
           </button>
         </div>
