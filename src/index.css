@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(https://fonts.googleapis.com/css?family=Belleza:regular);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar-track {
+  background-color: #c4c2c2;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #14532d;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  font-family: 'Belleza', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #c4c2c2;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.custom-img {
+  background-image: url('./assets/images/hero.jpg');
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-[1200px] px-2;
+  }
 }
