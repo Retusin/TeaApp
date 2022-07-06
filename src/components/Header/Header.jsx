@@ -25,7 +25,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="container fixed right-0 left-0  z-20 w-full rounded-xl">
+    <div className=" fixed right-0 left-0  z-20 w-full rounded-xl">
       <div
         style={{
           backgroundColor: `${color}`,
