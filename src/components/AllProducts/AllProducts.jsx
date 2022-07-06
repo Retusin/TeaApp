@@ -34,7 +34,7 @@ function AllProducts() {
   }, [category]);
 
   return (
-    <div className="container pt-20">
+    <div className="container">
       <h2 className="mb-8 text-center text-3xl font-bold text-green-900">All Products</h2>
       <div>
         <ul className="flex flex-wrap items-center justify-center gap-6">
