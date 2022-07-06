@@ -5,21 +5,43 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 
 function Header() {
   const [nav, setNav] = React.useState(false);
+  const [color, setColor] = React.useState('transparent');
+  const [textColor, setTextColor] = React.useState('white');
   const handleNav = () => {
     setNav(!nav);
   };
 
+  React.useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 90) {
+        setColor('#14532D');
+        setTextColor('#fff');
+      } else {
+        setColor('transparent');
+        setTextColor('#fff');
+      }
+    };
+    window.addEventListener('scroll', changeColor);
+  }, []);
+
   return (
-    <div className="container absolute right-0 left-0 z-20 py-4">
-      <div className="flex items-center justify-between text-white">
+    <div className="container fixed right-0 left-0  z-20 w-full rounded-xl">
+      <div
+        style={{
+          backgroundColor: `${color}`,
+          borderBottomRightRadius: '20px',
+          borderBottomLeftRadius: '20px',
+        }}
+        className="flex h-[60px] items-center justify-between px-10 text-white"
+      >
         <Link to="/">
-          <div className="flex items-center gap-3">
+          <div style={{color: `${textColor}`}} className="flex items-center gap-3">
             <span className="text-2xl font-semibold">TeaShop</span>
             <GiCoffeeMug size={30} />
           </div>
         </Link>
         <div className="flex items-center gap-10">
-          <ul className="hidden items-center gap-10 md:flex">
+          <ul style={{color: `${textColor}`}} className="hidden items-center gap-10 md:flex">
             <li className=" hover:text-green-200">
               <Link to="/">Home</Link>
             </li>
