@@ -14,7 +14,7 @@ function TeaDetailPage() {
       <div className="container py-10">
         <div className="block items-center gap-10 lg:flex">
           <img
-            className="h-[500px] w-[500px] rounded-xl object-cover"
+            className="mb-10 h-[500px] w-[500px] rounded-xl object-cover lg:mb-0"
             src={teaItem.item.imagePath}
             alt="/"
           />
