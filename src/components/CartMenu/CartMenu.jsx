@@ -7,7 +7,11 @@ const CartMenu = ({items, onClick}) => {
   return (
     <div className="container">
       <div>
-        {items.length > 0 ? items.map(item => <CartItem {...item} />) : <div>Cart is Empty 🥲</div>}
+        {items.length > 0 ? (
+          items.map(item => <CartItem {...item} />)
+        ) : (
+          <div className="py-[100px] text-center text-2xl font-semibold">Cart is Empty 🥲</div>
+        )}
         <div>
           {items.length > 0 ? (
             <div className="my-10 text-center">
